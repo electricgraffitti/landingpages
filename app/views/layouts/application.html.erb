@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <%= render partial: 'layouts/application/headmeta' %>
+  </head>
+
+  <body>
+
+    <%# Header %>
+    <div id="mast_header" class="full_content_wrap header_gradient shadow_1">
+      <div id="hd" class="center_content_wrap">
+        <%= link_to "SendFil.es", root_url, id: "logo" %>
+        <%#= render partial: "layouts/application/main_nav" %>
+      </div>
+      <%= clear %>
+    </div>
+    
+
+    <%# Banner %>
+    <div id="mast_banner" class="full_content_wrap">
+      <div id="banner" class="center_content_wrap">
+        <%= yield :banner %>
+        <%= clear %>
+      </div>
+      <div id="cta">
+        <div class="center_content_wrap">
+          <%= yield :banner_cta %>
+        </div>
+      </div>
+      <%= clear %>
+    </div>
+
+
+    <%# Main Content %>
+    <div id="mast_bd" class="full_content_wrap">
+      <div id="bd" class="center_content_wrap">
+        <%= yield %>
+        <%= clear %>
+      </div>
+      <%= clear %>
+    </div>
+  
+    <%# Footer %>
+    <div id="mast_footer" class="full_content_wrap">
+      <div id="ft" class="center_content_wrap">
+        <%= render partial: "layouts/application/footer" %>
+      </div>
+    </div>
+    <%= yield :overlays %>
+    <%= render partial: "layouts/cdn_scripts" %>
+    <%= render partial: "layouts/application/scripts" %>
+  </body>
+
+</html>
